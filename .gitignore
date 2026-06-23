@@ -1,0 +1,16 @@
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# PowerShell/editor noise
+*.tmp
+*.bak
+*.log
+
+# Keep the sync bundle clean if commands are run from inside it
+__pycache__/
+*.pyc
+
+# Local system skills are needed for junction mode but should not be tracked
+skills/codex/.system/

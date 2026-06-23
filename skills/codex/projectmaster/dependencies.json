@@ -1,0 +1,23 @@
+{
+  "skill": "projectmaster",
+  "type": "orchestration",
+  "required_core": [
+    "brainstorming",
+    "writing-plans",
+    "subagent-driven-development",
+    "executing-plans",
+    "requesting-code-review",
+    "verification-before-completion"
+  ],
+  "required_engineering": [
+    "grill-with-docs",
+    "setup-matt-pocock-skills",
+    "tdd",
+    "diagnosing-bugs",
+    "handoff"
+  ],
+  "recommended": [
+    "improve-codebase-architecture",
+    "systematic-debugging"
+  ]
+}

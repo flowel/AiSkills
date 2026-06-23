@@ -1,0 +1,65 @@
+﻿Skill Sync Bundle
+
+Canonical location: D:\WorkSpace\Skill-Sync
+Git source mode: live skill folders should point here
+
+Codex link active: True
+Agents link active: True
+
+Codex skills:
+- academic-research-suite
+- agent-browser
+- ask-matt
+- brainstorming
+- codebase-design
+- diagnosing-bugs
+- dispatching-parallel-agents
+- domain-modeling
+- edit-article
+- executing-plans
+- figma-generate-design
+- find-skills
+- finishing-a-development-branch
+- frontend-design
+- git-guardrails-claude-code
+- grill-me
+- grill-with-docs
+- grilling
+- handoff
+- hatch-pet
+- huashu-design
+- humanizer
+- humanizer-zh
+- implement
+- improve-codebase-architecture
+- migrate-to-shoehorn
+- obsidian-vault
+- projectmaster
+- prototype
+- receiving-code-review
+- requesting-code-review
+- resolving-merge-conflicts
+- scaffold-exercises
+- setup-matt-pocock-skills
+- setup-pre-commit
+- subagent-driven-development
+- systematic-debugging
+- tdd
+- teach
+- test-driven-development
+- to-issues
+- to-prd
+- triage
+- using-git-worktrees
+- using-superpowers
+- verification-before-completion
+- writing-great-skills
+- writing-plans
+- writing-skills
+- zhangxuefeng-skill
+
+Agent skills:
+- deep-research
+- find-skills
+- paper-review-skills
+- paper-writing
