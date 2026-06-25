@@ -1,0 +1,4 @@
+interface:
+  display_name: "Projectmaster"
+  short_description: "Stronger end-to-end project kickoff flow"
+  default_prompt: "Use when starting a new project, major feature, or recovery effort and you want the full recommended workflow before coding."
