@@ -100,7 +100,7 @@ if (Test-Path -LiteralPath $agentsLive) {
 $manifest = [ordered]@{
     exported_at = (Get-Date).ToString("s")
     layout = "git-source-mode-v1"
-    canonical_location = $bundleRoot
+    canonical_location = $bundleRoot.ToLowerInvariant()
     folders = @{
         codex = "skills/codex"
         agents = "skills/agents"

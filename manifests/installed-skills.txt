@@ -28,6 +28,9 @@ Codex skills:
 - grilling
 - handoff
 - hatch-pet
+- html
+- html-diagram
+- html-plan
 - huashu-design
 - humanizer
 - humanizer-zh
@@ -83,6 +86,9 @@ Agent skills:
 - grilling
 - handoff
 - hatch-pet
+- html
+- html-diagram
+- html-plan
 - huashu-design
 - humanizer
 - humanizer-zh

@@ -1,7 +1,7 @@
 ﻿{
-    "exported_at":  "2026-06-26T11:07:30",
+    "exported_at":  "2026-06-26T14:45:04",
     "layout":  "git-source-mode-v1",
-    "canonical_location":  "D:\\workspace\\skill-sync",
+    "canonical_location":  "d:\\workspace\\skill-sync",
     "folders":  {
                     "agents":  "skills/agents",
                     "codex":  "skills/codex"
@@ -36,6 +36,9 @@
                          "grilling",
                          "handoff",
                          "hatch-pet",
+                         "html",
+                         "html-diagram",
+                         "html-plan",
                          "huashu-design",
                          "humanizer",
                          "humanizer-zh",
@@ -91,6 +94,9 @@
                          "grilling",
                          "handoff",
                          "hatch-pet",
+                         "html",
+                         "html-diagram",
+                         "html-plan",
                          "huashu-design",
                          "humanizer",
                          "humanizer-zh",

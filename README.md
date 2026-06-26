@@ -25,6 +25,9 @@ Recommended repository path on this machine:
 - `projectmaster` is an orchestration skill. Its dependency notes live in:
   - `skills/codex/projectmaster/DEPENDENCIES.md`
   - `skills/codex/projectmaster/dependencies.json`
+- Bundled third-party skill pack: `plannotator/effective-html`
+  - Installed skills: `html`, `html-diagram`, `html-plan`
+  - Source: https://github.com/plannotator/effective-html
 
 ## Windows Deployment Contract
 
