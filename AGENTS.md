@@ -45,5 +45,6 @@ powershell -ExecutionPolicy Bypass -File .\sync-skills.ps1
 ## Important Notes
 
 - Do not commit `.system`
+- Do not commit `manifests/local-state.json` or `manifests/local-state.txt`
 - Keep `projectmaster` dependency files in sync
 - This folder is intended to be the maintainable source of truth for cross-device sync, not a one-off export

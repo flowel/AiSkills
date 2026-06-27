@@ -29,29 +29,20 @@ Recommended repository path on this machine:
   - Installed skills: `html`, `html-diagram`, `html-plan`
   - Source: https://github.com/plannotator/effective-html
 
-## Windows Deployment Contract
+## Manifests
 
-This user's cross-device setup is Windows-only for now. To keep the tracked
-manifest (`manifests/installed-skills.json`) conflict-free across machines,
-**all Windows machines MUST clone the bundle to the same path**:
+This repo now keeps two kinds of manifest:
 
-`D:\workspace\skill-sync`
+- Tracked inventory:
+  - `manifests/installed-skills.json`
+  - `manifests/installed-skills.txt`
+- Local machine state:
+  - `manifests/local-state.json`
+  - `manifests/local-state.txt`
 
-Rationale: the manifest records `canonical_location` and the live `live_paths`
-fields, which are derived from the bundle path and `$HOME`. If any Windows
-machine deviates (different drive letter, different folder name, different
-Windows username), running `sync-skills.ps1` on it will produce a diff that
-conflicts with other machines on the next pull.
+The tracked inventory reflects the repo itself: which skills currently exist under `skills/codex` and `skills/agents`.
 
-Cross-checks before cloning on a new Windows machine:
-
-- Bundle path is exactly `D:\workspace\skill-sync`
-- Windows username is `Administrator` (so `~/.codex/skills` resolves identically)
-- Run `restore-skills.ps1` after cloning, then restart Codex
-
-macOS is intentionally out of scope. When the user adds a Mac, this section
-will be revisited (likely by extracting the machine-specific fields out of
-the tracked manifest or by introducing a per-OS override layer).
+The local state reflects the current machine: local paths, link status, and current live counts. These files are intentionally ignored by Git so different machines can use different local paths without blocking `git pull`.
 
 ## Git Source Mode
 
@@ -100,7 +91,9 @@ That script will:
 
 - refresh `manifests/installed-skills.json`
 - refresh `manifests/installed-skills.txt`
-- report whether the live skill roots are currently linked
+- refresh `manifests/local-state.json`
+- refresh `manifests/local-state.txt`
+- report current skill counts
 
 ## Daily Workflow
 

@@ -1,19 +1,9 @@
 ﻿{
-    "exported_at":  "2026-06-26T14:45:04",
-    "layout":  "git-source-mode-v1",
-    "canonical_location":  "d:\\workspace\\skill-sync",
+    "layout":  "git-source-mode-v2",
     "folders":  {
                     "agents":  "skills/agents",
                     "codex":  "skills/codex"
                 },
-    "live_paths":  {
-                       "agents":  "C:\\Users\\Administrator\\.agents\\skills",
-                       "codex":  "C:\\Users\\Administrator\\.codex\\skills"
-                   },
-    "link_status":  {
-                        "agents":  true,
-                        "codex":  true
-                    },
     "codex_skills":  [
                          "academic-research-suite",
                          "agent-browser",

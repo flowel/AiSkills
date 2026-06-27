@@ -1,10 +1,4 @@
-﻿Skill Sync Bundle
-
-Canonical location: D:\workspace\skill-sync
-Git source mode: live skill folders should point here
-
-Codex link active: True
-Agents link active: True
+﻿Tracked Skill Inventory
 
 Codex skills:
 - academic-research-suite

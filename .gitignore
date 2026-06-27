@@ -14,3 +14,7 @@ __pycache__/
 
 # Local system skills are needed for junction mode but should not be tracked
 skills/codex/.system/
+
+# Local machine state should never block git pull
+manifests/local-state.json
+manifests/local-state.txt

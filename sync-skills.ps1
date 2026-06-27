@@ -97,14 +97,19 @@ if (Test-Path -LiteralPath $agentsLive) {
     $agentsIsLinked = [bool]($agentsItem.LinkType)
 }
 
-$manifest = [ordered]@{
-    exported_at = (Get-Date).ToString("s")
-    layout = "git-source-mode-v1"
-    canonical_location = $bundleRoot.ToLowerInvariant()
+$trackedManifest = [ordered]@{
+    layout = "git-source-mode-v2"
     folders = @{
         codex = "skills/codex"
         agents = "skills/agents"
     }
+    codex_skills = @($codexSkills | ForEach-Object Name)
+    agent_skills = @($agentSkills | ForEach-Object Name)
+}
+
+$localState = [ordered]@{
+    exported_at = (Get-Date).ToString("s")
+    canonical_location = $bundleRoot
     live_paths = @{
         codex = $codexLive
         agents = $agentsLive
@@ -113,21 +118,15 @@ $manifest = [ordered]@{
         codex = $codexIsLinked
         agents = $agentsIsLinked
     }
-    codex_skills = @($codexSkills | ForEach-Object Name)
-    agent_skills = @($agentSkills | ForEach-Object Name)
+    codex_skill_count = @($codexSkills).Count
+    agent_skill_count = @($agentSkills).Count
 }
 
-$manifest | ConvertTo-Json -Depth 8 |
+$trackedManifest | ConvertTo-Json -Depth 8 |
     Set-Content -LiteralPath (Join-Path $manifestsRoot "installed-skills.json") -Encoding UTF8
 
 @(
-    "Skill Sync Bundle"
-    ""
-    "Canonical location: " + $bundleRoot
-    "Git source mode: live skill folders should point here"
-    ""
-    "Codex link active: " + $codexIsLinked
-    "Agents link active: " + $agentsIsLinked
+    "Tracked Skill Inventory"
     ""
     "Codex skills:"
     @($codexSkills | ForEach-Object { "- " + $_.Name })
@@ -136,9 +135,23 @@ $manifest | ConvertTo-Json -Depth 8 |
     @($agentSkills | ForEach-Object { "- " + $_.Name })
 ) | Set-Content -LiteralPath (Join-Path $manifestsRoot "installed-skills.txt") -Encoding UTF8
 
+$localState | ConvertTo-Json -Depth 8 |
+    Set-Content -LiteralPath (Join-Path $manifestsRoot "local-state.json") -Encoding UTF8
+
+@(
+    "Local Machine State"
+    ""
+    "Canonical location: " + $bundleRoot
+    "Codex live path: " + $codexLive
+    "Agents live path: " + $agentsLive
+    "Codex link active: " + $codexIsLinked
+    "Agents link active: " + $agentsIsLinked
+    "Codex skills: " + @($codexSkills).Count
+    "Agent skills: " + @($agentSkills).Count
+) | Set-Content -LiteralPath (Join-Path $manifestsRoot "local-state.txt") -Encoding UTF8
+
 Write-Output ""
-Write-Output ("Bundle metadata refreshed at: " + $bundleRoot)
+Write-Output ("Tracked manifest refreshed at: " + $bundleRoot)
 Write-Output ("Codex skills: " + $codexSkills.Count)
 Write-Output ("Agent skills: " + $agentSkills.Count)
-Write-Output ("Codex link active: " + $codexIsLinked)
-Write-Output ("Agents link active: " + $agentsIsLinked)
+Write-Output ("Local state written to manifests/local-state.*")
